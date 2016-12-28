@@ -46,3 +46,13 @@ dependencies {
     compile 'com.h2database:h2:1.4.191'
     compile 'org.gradle:gradle-wrapper:1.0-rc-1'
 }
+
+
+repositories {
+	mavenCentral()
+	maven {
+		url "http://repo.spring.io/libs-release"
+	}
+	maven { url 'https://repo.gradle.org/gradle/libs-releases' }
+}
+
