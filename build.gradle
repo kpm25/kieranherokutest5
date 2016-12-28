@@ -56,3 +56,8 @@ repositories {
 	maven { url 'https://repo.gradle.org/gradle/libs-releases' }
 }
 
+task stage(dependsOn: ['build', 'clean'])
+build.mustRunAfter clean
+
+
+
