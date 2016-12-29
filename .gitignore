@@ -8,7 +8,7 @@
 .gradle/
 
 ## Package Files #
-*.jar
-!h2*.jar
+##*.jar
+##!h2*.jar
 *.war
 *.ear
