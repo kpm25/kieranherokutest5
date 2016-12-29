@@ -37,11 +37,11 @@ jar {
 
 // Specify the location where our dependencies will be found
 
-
+/*
 task wrapper(type: Wrapper) {
 	gradleVersion = '2.9'
 }
-
+*/
 
 
 repositories {
@@ -57,8 +57,7 @@ dependencies {
 
 }
 
-/*
 task stage {
+
     dependsOn build
 }
-*/
