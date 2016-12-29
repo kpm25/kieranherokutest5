@@ -1,5 +1,5 @@
-group 'com.teamtreehouse'
-version '1.0-SNAPSHOT'
+group 'myGiflib-heroku'
+version '0.0.1-SNAPSHOT'
 
 // Include the Spring Boot plugin
 buildscript {
@@ -20,6 +20,12 @@ apply plugin: 'spring-boot'
 // Apply the Java plugin (expects src/main/java to be source folder)
 apply plugin: 'java'
 
+jar {
+	baseName = 'myGiflib-heroku'
+	version = '0.0.1-SNAPSHOT'
+}
+
+
 // Specify the location where our dependencies will be found
 repositories {
     mavenCentral()
@@ -34,9 +40,35 @@ dependencies {
     compile 'org.apache.tomcat:tomcat-dbcp:8.0.32'
     compile 'com.h2database:h2:1.4.191'
     
- //   compile 'org.gradle:gradle-wrapper:1.0-rc-1'
+    compile 'org.gradle:gradle-wrapper:1.0-rc-1'
+    
+    runtime 'com.h2database:h2'
+	runtime 'javax.transaction:jta:1.1'
+	runtime 'org.aspectj:aspectjweaver:1.8.7'
+
+	testCompile 'org.springframework.boot:spring-boot-starter-test'
+ 
 }
+
+/*
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '2.9'
+}
+*/
+
+
+repositories {
+
+	maven {
+		url "http://repo.spring.io/libs-release"
+	}
+	maven { url 'https://repo.gradle.org/gradle/libs-releases' }
+}
+
 
 task stage {
     dependsOn build
 }
+
+
