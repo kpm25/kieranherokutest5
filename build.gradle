@@ -50,12 +50,11 @@ dependencies {
  
 }
 
-/*
+
 
 task wrapper(type: Wrapper) {
 	gradleVersion = '2.9'
 }
-*/
 
 
 repositories {
@@ -66,9 +65,9 @@ repositories {
 	maven { url 'https://repo.gradle.org/gradle/libs-releases' }
 }
 
-
+/*
 task stage {
     dependsOn build
 }
 
-
+*/
